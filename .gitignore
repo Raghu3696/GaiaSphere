@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+
+# Data & Checkpoints (too large for git — use DVC or HuggingFace Hub)
+data/
+checkpoints/
+outputs/*.pth
+outputs/*.pt
+*.hdf5
+*.nc
+*.tif
+*.tiff
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Credentials (NEVER commit these)
+.env
+*.key
+creds.json
+service_account.json
+
+# OS
+.DS_Store
+Thumbs.db

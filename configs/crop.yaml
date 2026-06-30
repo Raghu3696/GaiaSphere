@@ -1,0 +1,32 @@
+# GaiaSphere — CropHealthNet Configuration
+# ==========================================
+task: crop
+output_dir: outputs/crop
+
+# Data
+train_dir: data/crop/train
+val_dir:   data/crop/val
+img_size:  256
+in_channels: 13
+temporal_window: 60  # longer window for seasonal crop cycle
+
+# Model
+patch_size:    16
+vit_embed_dim: 768
+vit_depth:     12
+vit_heads:     12
+st_depth:      6
+weather_dim:   16
+gnn_hidden:    256
+gnn_layers:    3
+dropout:       0.1
+
+# Training
+epochs:       80
+batch_size:   8
+lr:           1e-4
+min_lr:       1e-6
+weight_decay: 1e-2
+
+# Loss (Huber — robust NDVI regression)
+huber_delta: 0.1

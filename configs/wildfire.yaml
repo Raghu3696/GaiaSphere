@@ -1,0 +1,33 @@
+# GaiaSphere — WildfireNet Configuration
+# ========================================
+task: wildfire
+output_dir: outputs/wildfire
+
+# Data
+train_dir: data/wildfire/train
+val_dir:   data/wildfire/val
+img_size:  256
+in_channels: 13
+temporal_window: 14  # shorter window for fast-moving fire dynamics
+
+# Model
+patch_size:    16
+vit_embed_dim: 768
+vit_depth:     12
+vit_heads:     12
+st_depth:      6
+weather_dim:   16
+gnn_hidden:    256
+gnn_layers:    3
+dropout:       0.1
+
+# Training
+epochs:       60
+batch_size:   4
+lr:           5e-5
+min_lr:       1e-6
+weight_decay: 1e-2
+
+# Loss (Focal — severe class imbalance in fire pixels)
+focal_alpha: 0.25
+focal_gamma: 2.0

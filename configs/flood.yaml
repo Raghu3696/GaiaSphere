@@ -1,0 +1,37 @@
+# GaiaSphere — FloodNet Configuration
+# =====================================
+task: flood
+output_dir: outputs/flood
+
+# Data
+train_dir: data/flood/train
+val_dir:   data/flood/val
+img_size:  256
+in_channels: 13      # Sentinel-2 bands
+temporal_window: 30  # days of satellite imagery
+
+# Model
+patch_size:    16
+vit_embed_dim: 768
+vit_depth:     12
+vit_heads:     12
+st_depth:      6
+weather_dim:   16    # ERA5 variables: temp, precip, humidity, wind_u, wind_v, ...
+gnn_hidden:    256
+gnn_layers:    3
+dropout:       0.1
+
+# Training
+epochs:       50
+batch_size:   4
+lr:           1e-4
+min_lr:       1e-6
+weight_decay: 1e-2
+
+# Loss (BCE + Dice)
+bce_weight: 0.5
+
+# Augmentation
+random_flip: true
+random_rotate: true
+color_jitter: false  # not for multi-spectral

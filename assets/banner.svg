@@ -1,0 +1,171 @@
+<svg viewBox="0 0 1200 340" xmlns="http://www.w3.org/2000/svg" font-family="'Space Grotesk', system-ui, sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#050D1A"/>
+    </radialGradient>
+    <radialGradient id="globe-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FF87" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00FF87" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="globe-surface" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#1a3a5c"/>
+      <stop offset="60%" stop-color="#0d2240"/>
+      <stop offset="100%" stop-color="#050D1A"/>
+    </radialGradient>
+    <filter id="glow-green">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-amber">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="globe-clip">
+      <circle cx="960" cy="170" r="130"/>
+    </clipPath>
+    <linearGradient id="scan-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00FF87" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00FF87" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00FF87" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="340" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#1a2940" stroke-width="0.5" opacity="0.6">
+    <line x1="0" y1="85" x2="1200" y2="85"/>
+    <line x1="0" y1="170" x2="1200" y2="170"/>
+    <line x1="0" y1="255" x2="1200" y2="255"/>
+    <line x1="300" y1="0" x2="300" y2="340"/>
+    <line x1="600" y1="0" x2="600" y2="340"/>
+    <line x1="900" y1="0" x2="900" y2="340"/>
+  </g>
+
+  <!-- Left decorative corner bracket -->
+  <g stroke="#00FF87" stroke-width="1.5" fill="none" opacity="0.7">
+    <path d="M 30 30 L 30 60 L 60 60"/>
+    <path d="M 30 310 L 30 280 L 60 280"/>
+  </g>
+  <g stroke="#00FF87" stroke-width="1.5" fill="none" opacity="0.7">
+    <path d="M 1170 30 L 1170 60 L 1140 60"/>
+    <path d="M 1170 310 L 1170 280 L 1140 280"/>
+  </g>
+
+  <!-- Globe glow halo -->
+  <circle cx="960" cy="170" r="160" fill="url(#globe-glow)"/>
+
+  <!-- Globe body -->
+  <circle cx="960" cy="170" r="130" fill="url(#globe-surface)" stroke="#00FF87" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- Globe: latitude lines -->
+  <g clip-path="url(#globe-clip)" stroke="#1e4a7a" stroke-width="0.6" fill="none" opacity="0.8">
+    <ellipse cx="960" cy="100" rx="130" ry="18"/>
+    <ellipse cx="960" cy="135" rx="130" ry="30"/>
+    <ellipse cx="960" cy="170" rx="130" ry="35"/>
+    <ellipse cx="960" cy="205" rx="130" ry="30"/>
+    <ellipse cx="960" cy="240" rx="130" ry="18"/>
+  </g>
+
+  <!-- Globe: longitude lines -->
+  <g clip-path="url(#globe-clip)" stroke="#1e4a7a" stroke-width="0.6" fill="none" opacity="0.8">
+    <ellipse cx="960" cy="170" rx="20" ry="130"/>
+    <ellipse cx="960" cy="170" rx="55" ry="130"/>
+    <ellipse cx="960" cy="170" rx="90" ry="130"/>
+    <ellipse cx="960" cy="170" rx="115" ry="130"/>
+  </g>
+
+  <!-- Simplified continent shapes -->
+  <g clip-path="url(#globe-clip)" fill="#1e3d6b" opacity="0.9">
+    <!-- Africa / Europe -->
+    <path d="M 940 100 Q 990 95 1010 110 Q 1020 140 1005 160 Q 980 185 960 200 Q 940 215 930 195 Q 915 170 920 145 Q 925 115 940 100 Z"/>
+    <!-- Americas hint -->
+    <path d="M 870 130 Q 895 125 905 145 Q 900 170 890 185 Q 875 175 868 155 Q 865 140 870 130 Z"/>
+    <!-- Asia hint -->
+    <path d="M 1010 105 Q 1060 100 1075 120 Q 1080 140 1060 155 Q 1035 150 1015 135 Q 1005 120 1010 105 Z"/>
+  </g>
+
+  <!-- Orbital paths -->
+  <g fill="none" opacity="0.5">
+    <ellipse cx="960" cy="170" rx="175" ry="55" stroke="#00FF87" stroke-width="0.8" stroke-dasharray="4,3"/>
+    <ellipse cx="960" cy="170" rx="145" ry="165" stroke="#00FF87" stroke-width="0.8" stroke-dasharray="4,3" transform="rotate(65,960,170)"/>
+  </g>
+
+  <!-- Satellite dots on orbits -->
+  <circle cx="960" cy="115" r="4" fill="#00FF87" filter="url(#glow-green)"/>
+  <circle cx="1135" cy="170" r="3.5" fill="#00FF87" filter="url(#glow-green)"/>
+  <circle cx="870" cy="235" r="3" fill="#00FF87" opacity="0.7"/>
+
+  <!-- Threat markers on globe -->
+  <!-- Flood marker (blue pulse) -->
+  <circle cx="942" cy="155" r="7" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.9"/>
+  <circle cx="942" cy="155" r="3" fill="#3B82F6" opacity="0.9"/>
+
+  <!-- Wildfire marker (amber) -->
+  <circle cx="990" cy="135" r="6" fill="none" stroke="#FF6B35" stroke-width="1.5" opacity="0.9" filter="url(#glow-amber)"/>
+  <circle cx="990" cy="135" r="2.5" fill="#FF6B35"/>
+
+  <!-- Crop marker (green) -->
+  <circle cx="955" cy="195" r="5" fill="none" stroke="#00FF87" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="955" cy="195" r="2" fill="#00FF87"/>
+
+  <!-- Scan line sweep across globe -->
+  <rect x="830" y="155" width="260" height="2" fill="url(#scan-line)" opacity="0.6"/>
+
+  <!-- ── TEXT SECTION ── -->
+
+  <!-- Eyebrow tag -->
+  <rect x="80" y="50" width="220" height="22" rx="3" fill="#00FF87" fill-opacity="0.08" stroke="#00FF87" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="190" y="65" fill="#00FF87" font-size="10" font-weight="500" letter-spacing="3" text-anchor="middle" opacity="0.9">EARTH INTELLIGENCE SYSTEM</text>
+
+  <!-- Main title -->
+  <text x="80" y="130" fill="#E8F4F8" font-size="72" font-weight="700" letter-spacing="-2">Gaia</text>
+  <text x="270" y="130" fill="#00FF87" font-size="72" font-weight="700" letter-spacing="-2">Sphere</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="168" fill="#8BA4BB" font-size="16" font-weight="400" letter-spacing="0.5">Multi-modal geospatial AI for environmental threat detection</text>
+
+  <!-- Divider line -->
+  <line x1="80" y1="188" x2="400" y2="188" stroke="#1A2940" stroke-width="1"/>
+
+  <!-- Model tags -->
+  <g font-size="11" font-weight="500">
+    <!-- ViT -->
+    <rect x="80" y="202" width="130" height="24" rx="3" fill="#0a1e35" stroke="#3B82F6" stroke-width="0.8"/>
+    <text x="145" y="218" fill="#3B82F6" text-anchor="middle">Vision Transformer</text>
+
+    <!-- ST-Former -->
+    <rect x="220" y="202" width="155" height="24" rx="3" fill="#0a1e35" stroke="#00FF87" stroke-width="0.8"/>
+    <text x="297" y="218" fill="#00FF87" text-anchor="middle">Spatio-Temporal Attn</text>
+
+    <!-- GNN -->
+    <rect x="385" y="202" width="115" height="24" rx="3" fill="#0a1e35" stroke="#FF6B35" stroke-width="0.8"/>
+    <text x="442" y="218" fill="#FF6B35" text-anchor="middle">Graph Neural Net</text>
+  </g>
+
+  <!-- Task outputs -->
+  <g font-size="12">
+    <text x="80" y="268" fill="#8BA4BB" font-weight="400">Detects →</text>
+    <!-- Flood -->
+    <rect x="158" y="253" width="70" height="22" rx="2" fill="#3B82F6" fill-opacity="0.12" stroke="#3B82F6" stroke-width="0.7"/>
+    <text x="193" y="268" fill="#3B82F6" text-anchor="middle">Floods</text>
+    <!-- Crop -->
+    <rect x="238" y="253" width="90" height="22" rx="2" fill="#00FF87" fill-opacity="0.08" stroke="#00FF87" stroke-width="0.7"/>
+    <text x="283" y="268" fill="#00FF87" text-anchor="middle">Crop Health</text>
+    <!-- Wildfire -->
+    <rect x="338" y="253" width="85" height="22" rx="2" fill="#FF6B35" fill-opacity="0.10" stroke="#FF6B35" stroke-width="0.7"/>
+    <text x="380" y="268" fill="#FF6B35" text-anchor="middle">Wildfires</text>
+  </g>
+
+  <!-- Bottom data sources line -->
+  <text x="80" y="305" fill="#4a6480" font-size="10" letter-spacing="1">INPUTS: SENTINEL-2  ·  ERA5 WEATHER  ·  SRTM DEM  ·  MODIS BURNED AREA</text>
+
+  <!-- Corner data readout (top right, aesthetic detail) -->
+  <g font-family="'Courier New', monospace" font-size="9" fill="#00FF87" opacity="0.45">
+    <text x="800" y="48">SAT_FEED: LIVE</text>
+    <text x="800" y="62">RESOLUTION: 10m</text>
+    <text x="800" y="76">BANDS: 13-CH MSI</text>
+  </g>
+</svg>
