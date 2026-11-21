@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="GaiaSphere Banner" width="100%"/>
 
-# 🌍 GaiaSphere
+# GaiaSphere
 
 ### *Earth Intelligence Through Deep Learning*
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 🛰️ What is GaiaSphere?
+## What is GaiaSphere?
 
 GaiaSphere is a research-grade deep learning framework that fuses **satellite imagery**, **meteorological time-series**, and **terrain topology** to detect and predict three critical environmental threats — **floods**, **crop stress**, and **wildfires** — at regional scale.
 
