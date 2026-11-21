@@ -41,7 +41,7 @@ Terrain (DEM)   ──┘  (Multi-modal AI)  ──► Crop Health Index
 
 GaiaSphere is built on three composable model families:
 
-### 1. 🔭 Vision Transformer (ViT-Geo)
+### 1.  Vision Transformer (ViT-Geo)
 A patch-based transformer adapted for multi-spectral satellite inputs. Unlike standard ViT, it ingests **13-band Sentinel-2 imagery** (RGB + NIR + SWIR + ...) and uses **positional encodings grounded in geographic coordinates** (lat/lon), not just pixel position.
 
 ```
