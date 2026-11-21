@@ -37,7 +37,7 @@ Terrain (DEM)   ──┘  (Multi-modal AI)  ──► Crop Health Index
 
 ---
 
-## 🧠 Architecture
+## Architecture
 
 GaiaSphere is built on three composable model families:
 
